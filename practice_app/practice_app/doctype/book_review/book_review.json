@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:book_name",
+ "creation": "2026-08-04 12:30:19.861955",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "book_name",
+  "genre",
+  "rating",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "book_name",
+   "fieldtype": "Data",
+   "label": "Book Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "genre",
+   "fieldtype": "Select",
+   "label": "Genre",
+   "options": "Fiction\nScience\nHistory\nTechnology"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Rating",
+   "options": "1 Star\n2 Stars\n3 Stars\n4 Stars\n5 Stars"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Reading\nCompleted\nNot Started"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-04 14:12:50.343854",
+ "modified_by": "Administrator",
+ "module": "Practice app",
+ "name": "Book review",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "book_name"
+}
