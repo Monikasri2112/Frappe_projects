@@ -10,7 +10,8 @@
   "movie_name",
   "ticket_price",
   "status",
-  "show_date"
+  "show_date",
+  "attach"
  ],
  "fields": [
   {
@@ -37,12 +38,17 @@
    "fieldname": "show_date",
    "fieldtype": "Date",
    "label": "Show Date"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "attach"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-06 15:16:03.265762",
+ "modified": "2026-08-22 11:53:46.128132",
  "modified_by": "Administrator",
  "module": "Practice app",
  "name": "Movie Ticket",
@@ -67,5 +73,6 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "movie_name"
+ "title_field": "movie_name",
+ "track_seen": 1
 }

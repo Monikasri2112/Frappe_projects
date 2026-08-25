@@ -2,20 +2,21 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "creation": "2026-08-05 12:42:28.812410",
+ "autoname": "field:book_title",
+ "creation": "2026-08-13 13:40:49.760758",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "book_title",
   "author",
-  "price",
-  "available"
+  "shelf"
  ],
  "fields": [
   {
    "fieldname": "book_title",
    "fieldtype": "Data",
-   "label": "Book Title"
+   "label": "Book Title",
+   "unique": 1
   },
   {
    "fieldname": "author",
@@ -23,24 +24,20 @@
    "label": "Author"
   },
   {
-   "fieldname": "price",
-   "fieldtype": "Currency",
-   "label": "Price"
-  },
-  {
-   "default": "0",
-   "fieldname": "available",
-   "fieldtype": "Check",
-   "label": "Available"
+   "fieldname": "shelf",
+   "fieldtype": "Link",
+   "label": "Shelf",
+   "options": "Library Shelf"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-05 12:43:23.284019",
+ "modified": "2026-08-13 13:42:33.959986",
  "modified_by": "Administrator",
  "module": "Practice app",
  "name": "Library Book",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -60,5 +57,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "book_title"
 }

@@ -13,9 +13,9 @@ frappe.pages["book-dashboard"].on_page_load = function (wrapper) {
 //    page.$sub_title_area.text("Manage all your book reviews");
 //    page.set_indicator('Pending', 'orange')
 //    page.clear_indicator()
-//    page.set_primary_action("Click Me", function () {
-//     frappe.msgprint("Hello!");
-// });
+   page.set_primary_action("Click Me", function () {
+    frappe.msgprint("Hello!");
+});
 
 
 //page.clear_primary_action()
@@ -106,3 +106,4 @@ frappe.pages["book-dashboard"].on_page_load = function (wrapper) {
 
 
 };
+

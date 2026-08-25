@@ -17,6 +17,7 @@
 
 //get_indicator
 frappe.listview_settings["Book review"] = {
+    // hide_name_column: true,
 
     add_fields: ["status"],
 
@@ -55,33 +56,33 @@ frappe.listview_settings["Book review"] = {
 
 //ading button to list view
 
-// frappe.listview_settings["Book review"] = {
+frappe.listview_settings["Book review"] = {
 
-//     add_fields: ["status"],
+    add_fields: ["status"],
 
-//     button: {
+    button: {
 
-//         show(doc) {
-//             return true;
-//         },
+        show(doc) {
+            return true;
+        },
 
-//         get_label() {
-//             return "Details";
-//         },
+        get_label() {
+            return "Details";
+        },
 
-//         get_description(doc) {
-//             return `View ${doc.book_name}`;
-//         },
+        get_description(doc) {
+            return `View ${doc.book_name}`;
+        },
 
-//         action(doc) {
-//             frappe.msgprint(
-//                 `Book: ${doc.book_name}<br>Status: ${doc.status}`
-//             );
-//         }
+        action(doc) {
+            frappe.msgprint(
+                `Book: ${doc.book_name}<br>Status: ${doc.status}`
+            );
+        }
 
-//     }
+    }
 
-// };
+};
 
 
 //formatters

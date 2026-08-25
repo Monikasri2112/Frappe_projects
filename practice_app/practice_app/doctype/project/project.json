@@ -2,33 +2,35 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "field:project_name",
  "creation": "2026-07-30 11:55:25.508359",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "project_name",
-  "tasks"
+  "description"
  ],
  "fields": [
   {
    "fieldname": "project_name",
    "fieldtype": "Data",
-   "label": "Project Name"
+   "label": "Title",
+   "unique": 1
   },
   {
-   "fieldname": "tasks",
-   "fieldtype": "Table",
-   "label": "Tasks",
-   "options": "Project Task"
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "description"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-30 11:58:28.140034",
+ "modified": "2026-08-12 10:45:05.035941",
  "modified_by": "Administrator",
  "module": "Practice app",
  "name": "Project",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -48,5 +50,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "project_name"
 }

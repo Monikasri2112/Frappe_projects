@@ -1,0 +1,9 @@
+frappe.msgprint("Hiiii")
+frappe.views.calendar["Appointment"]={
+    field_map:{
+        "start":"start",
+        "end":"end",
+        "title":"customer",
+        "id":"name"
+    }
+}

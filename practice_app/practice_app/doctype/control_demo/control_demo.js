@@ -37,3 +37,25 @@ frappe.ui.form.on("Control Demo", {
 
     }
 });
+
+
+
+frappe.ui.form.on("Control Demo", {
+    refresh(frm) {
+
+        frm.add_custom_button("Scan Barcode", () => {
+
+            new frappe.ui.Scanner({
+                dialog: true,
+                multiple: false,
+
+                on_scan(data) {
+                    console.log(data.decodedText);
+                }
+            });
+
+        });
+
+    }
+    
+});

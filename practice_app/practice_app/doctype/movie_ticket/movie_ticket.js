@@ -140,22 +140,22 @@
 // });
 
 
-frappe.ui.form.on("Movie Ticket", {
-	refresh(frm) {
+// frappe.ui.form.on("Movie Ticket", {
+// 	refresh(frm) {
 
-		frm.add_custom_button("Movie Prompt", function () {
+// 		frm.add_custom_button("Movie Prompt", function () {
 
-			frappe.prompt(
-				"Movie Name",
-				console.log,
-				"Enter Movie Name",
-				"Book"
-			);
+// 			frappe.prompt(
+// 				"Movie Name",
+// 				console.log,
+// 				"Enter Movie Name",
+// 				"Book"
+// 			);
 
-		});
+// 		});
 
-	}
-});
+// 	}
+// });
 
 
 // frappe.ui.form.on("Movie Ticket", {
@@ -319,80 +319,80 @@ frappe.ui.form.on("Movie Ticket", {
 // );
 
 
-// frappe.ui.form.on("Movie Ticket", {
-//     refresh(frm) {
+frappe.ui.form.on("Movie Ticket", {
+    refresh(frm) {
 
-//         frm.add_custom_button("Open Multi Select", () => {
+        frm.add_custom_button("Open Multi Select", () => {
 
-//             new frappe.ui.form.MultiSelectDialog({
+            new frappe.ui.form.MultiSelectDialog({
 
-//                 // DocType to fetch records from
-//                 doctype: "Movie Ticket",
+                // DocType to fetch records from
+                doctype: "Movie Ticket",
 
-//                 // Open dialog on current form
-//                 target: frm,
+                // Open dialog on current form
+                target: frm,
 
-//                 // Filter fields shown at the top
-//                 setters: {
-//                     movie_name: "",
-//                     status: "Booked",
-//                     show_date: null
-//                 },
+                // Filter fields shown at the top
+                setters: {
+                    movie_name: "",
+                    status: "Booked",
+                    show_date: null
+                },
 
-//                 // Make these filters read-only
-//                 read_only_setters: [
-//                     "status"
-//                 ],
+                // Make these filters read-only
+                read_only_setters: [
+                    "status"
+                ],
 
-//                 // Show additional filter section
-//                 add_filters_group: 1,
+                // Show additional filter section
+                add_filters_group: 1,
 
-//                 // Date field used for date filtering
-//                 date_field: "show_date",
+                // Date field used for date filtering
+                date_field: "show_date",
 
-//                 // Display these columns (works with custom query)
-//                 columns: [
-//                     "name",
-//                     "movie_name",
-//                     "status",
-//                     "ticket_price"
-//                 ],
+                // Display these columns (works with custom query)
+                columns: [
+                    "name",
+                    "movie_name",
+                    "status",
+                    "ticket_price"
+                ],
 
-//                 // Fetch only booked tickets
-//                 get_query() {
-//                     return {
-//                         filters: {
-//                             status: "Booked"
-//                         }
+                // Fetch only booked tickets
+                get_query() {
+                    return {
+                        filters: {
+                            status: "Booked"
+                        }
 
-//                         // OR use custom query
-//                         /*
-//                         query: "practice_app.api.get_movie_tickets",
-//                         filters: {
-//                             status: "Booked"
-//                         }
-//                         */
-//                     };
-//                 },
+                        // OR use custom query
+                        /*
+                        query: "practice_app.api.get_movie_tickets",
+                        filters: {
+                            status: "Booked"
+                        }
+                        */
+                    };
+                },
 
-//                 // Runs after clicking the primary button
-//                 action(selections) {
+                // Runs after clicking the primary button
+                action(selections) {
 
-//                     console.log(selections);
+                    console.log(selections);
 
-//                     frappe.msgprint(
-//                         "Selected Tickets:<br><br>" +
-//                         selections.join("<br>")
-//                     );
+                    frappe.msgprint(
+                        "Selected Tickets:<br><br>" +
+                        selections.join("<br>")
+                    );
 
-//                 }
+                }
 
-//             });
+            });
 
-//         });
+        });
 
-//     }
-// });
+    }
+});
 
 
 
@@ -669,7 +669,7 @@ frappe.ui.form.on("Movie Ticket", {
 // });
 
 
-// frm.add_custom_button("Get Ticket", () => {
+// frm.add_custom_button("", () => {
 
 //     frappe.db.get_doc(
 //         "Movie Ticket",
@@ -1007,3 +1007,54 @@ frappe.ui.form.on("Movie Ticket", {
 
 
 //msgprint("title","message")
+
+// frappe.ui.form.on("Movie Ticket", {
+//     refresh(frm) {
+// 		let dialog = new frappe.ui.Dialog({
+//     title: "Enter First Name",
+//     fields: [
+//         {
+//             label: "First Name",
+//             fieldname: "first_name",
+//             fieldtype: "Data"
+//         }
+//     ],
+//     primary_action_label: "Create project",
+
+//     primary_action(values) {
+//         dialog.hide();
+
+//         frappe.route_options = {
+//             project_name: values.first_name
+//         };
+
+//         frappe.new_doc("Project");
+//     }
+// });
+
+// dialog.show();
+//     }
+// });
+
+
+
+//msgprint("title","message")
+
+// frappe.ui.form.on("Movie Ticket", {
+//     refresh(frm) {
+// 		frm.add_custom_button("Get status", () => {
+//             frm.set_value("status", "Cancelled");
+//             frm.refresh_field("status");
+//         });
+//     }
+// });
+
+frappe.ui.form.on("Movie Ticket", {
+    refresh(frm) {
+        if(doc.status=='Cancelled'){
+            frm.add_custom_button("Approve",()=>{
+                frm.set_value("status", "Booked");
+                frappe.msgprint("Employee approved succesfully")
+            });
+        }
+    }});

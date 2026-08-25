@@ -1,0 +1,54 @@
+/* /* body {
+    background-color: lightblue;
+} 
+.navbar {
+    background-color: black !important;
+}
+/* Change the Web Form background */
+
+/* Style the form container */
+/* .web-form {
+    background-color:blueviolet;
+    padding: 30px;
+    border-radius: 12px;
+} */
+
+/* Style input fields */
+/* .form-control {
+    border: 2px red solid;
+    border-radius: 8px;
+    background-color: pink !important;
+} */
+
+/* Change input focus style */
+/* .form-control:focus {
+    border-color: #2c3e50;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
+
+/* Style labels */
+/* .control-label {
+    font-weight: bold;
+}
+.btn-primary {
+    background-color: green;
+    border-radius: 8px;
+    padding: 10px 25px;
+}  */
+
+
+/* Style input fields when focused */
+.form-control:focus {
+    border-color: blue !important;
+    box-shadow: 0 0 5px lightblue !important;
+}
+
+.control-label {
+    font-weight: bold !important;
+}
+
+.btn-primary {
+    background-color: green !important;
+    border-radius: 8px !important;
+    padding: 10px 25px !important;
+}
