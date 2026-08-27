@@ -11,18 +11,21 @@ frappe.pages["book-dashboard"].on_page_load = function (wrapper) {
 
 
 //    page.$sub_title_area.text("Manage all your book reviews");
-//    page.set_indicator('Pending', 'orange')
+   page.set_indicator('Pending', 'orange')
 //    page.clear_indicator()
-   page.set_primary_action("Click Me", function () {
-    frappe.msgprint("Hello!");
-});
+//    page.set_primary_action("Click Me", function () {
+//     frappe.msgprint("Hello!");
+// });
 
+// page.set_secondary_action()
 
 //page.clear_primary_action()
 
 // page.add_menu_item("Go to Reviews", function () {
 //     frappe.set_route("List", "Book review");
 // });
+
+
 
 // page.add_menu_item("New Review", function () {
 //     frappe.new_doc("Book review");
@@ -54,9 +57,9 @@ frappe.pages["book-dashboard"].on_page_load = function (wrapper) {
 
 
 
-// page.add_inner_button("Import", function () {
-//     frappe.msgprint("Import");
-// });
+page.add_inner_button("Import", ()=> {
+    frappe.msgprint("Import"),'Make'
+});
 
 // page.add_inner_button("Export", function () {
 //     frappe.msgprint("Export");

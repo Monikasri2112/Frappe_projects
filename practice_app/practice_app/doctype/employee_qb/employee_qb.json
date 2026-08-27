@@ -13,7 +13,8 @@
   "department",
   "salary",
   "bonus",
-  "joining_date"
+  "joining_date",
+  "extra"
  ],
  "fields": [
   {
@@ -31,6 +32,7 @@
   {
    "fieldname": "department",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Department",
    "options": "Development\nTesting\nHR\nSales"
   },
@@ -54,12 +56,17 @@
    "fieldname": "joining_date",
    "fieldtype": "Date",
    "label": "Joining Date"
+  },
+  {
+   "fieldname": "extra",
+   "fieldtype": "HTML",
+   "label": "extra"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-25 12:39:15.153900",
+ "modified": "2026-08-26 18:23:53.012422",
  "modified_by": "Administrator",
  "module": "Practice app",
  "name": "Employee qb",

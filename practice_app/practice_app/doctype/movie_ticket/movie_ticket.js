@@ -140,22 +140,22 @@
 // });
 
 
-// frappe.ui.form.on("Movie Ticket", {
-// 	refresh(frm) {
+frappe.ui.form.on("Movie Ticket", {
+	refresh(frm) {
 
-// 		frm.add_custom_button("Movie Prompt", function () {
+		frm.add_custom_button("Movie Prompt", function () {
 
-// 			frappe.prompt(
-// 				"Movie Name",
-// 				console.log,
-// 				"Enter Movie Name",
-// 				"Book"
-// 			);
+			frappe.prompt(
+				"Movie Name",
+				console.log,
+				"Enter Movie Name",
+				"Book"
+			);
 
-// 		});
+		});
 
-// 	}
-// });
+	}
+});
 
 
 // frappe.ui.form.on("Movie Ticket", {
@@ -403,139 +403,139 @@ frappe.ui.form.on("Movie Ticket", {
 
 
 
-//  frappe.ui.form.on("Movie Show", {
-//     refresh(frm) {
+ frappe.ui.form.on("Movie Show", {
+    refresh(frm) {
 
-//         // Add a custom button on the form
-//         frm.add_custom_button("Select Tickets", () => {
+        // Add a custom button on the form
+        frm.add_custom_button("Select Tickets", () => {
 
-//             // Open the Multi Select Dialog
-//             new frappe.ui.form.MultiSelectDialog({
+            // Open the Multi Select Dialog
+            new frappe.ui.form.MultiSelectDialog({
 
-//                 // --------------------------------------------------
-//                 // Parent DocType from which records are fetched
-//                 // --------------------------------------------------
-//                 doctype: "Movie Ticket",
+                // --------------------------------------------------
+                // Parent DocType from which records are fetched
+                // --------------------------------------------------
+                doctype: "Movie Ticket",
 
-//                 // --------------------------------------------------
-//                 // Open the dialog on the current form
-//                 // Usually use frm or cur_frm
-//                 // --------------------------------------------------
-//                 target: frm,
+                // --------------------------------------------------
+                // Open the dialog on the current form
+                // Usually use frm or cur_frm
+                // --------------------------------------------------
+                target: frm,
 
-//                 // --------------------------------------------------
-//                 // Filter fields shown at the top of the dialog.
-//                 // User can change these values (unless read-only).
-//                 // --------------------------------------------------
-//                 setters: {
-//                     movie_name: "",
-//                     status: "Booked"
-//                 },
+                // --------------------------------------------------
+                // Filter fields shown at the top of the dialog.
+                // User can change these values (unless read-only).
+                // --------------------------------------------------
+                setters: {
+                    movie_name: "",
+                    status: "Booked"
+                },
 
-//                 // --------------------------------------------------
-//                 // Make specific setter fields read-only.
-//                 // Here, the user cannot change "Booked".
-//                 // --------------------------------------------------
-//                 read_only_setters: [
-//                     "status"
-//                 ],
+                // --------------------------------------------------
+                // Make specific setter fields read-only.
+                // Here, the user cannot change "Booked".
+                // --------------------------------------------------
+                read_only_setters: [
+                    "status"
+                ],
 
-//                 // --------------------------------------------------
-//                 // Show the "Add Filter" section like List View.
-//                 // 1 = Show
-//                 // 0 = Hide
-//                 // --------------------------------------------------
-//                 add_filters_group: 1,
+                // --------------------------------------------------
+                // Show the "Add Filter" section like List View.
+                // 1 = Show
+                // 0 = Hide
+                // --------------------------------------------------
+                add_filters_group: 1,
 
-//                 // --------------------------------------------------
-//                 // Date field used for the built-in date filter.
-//                 // (Only if your DocType has a Date field)
-//                 // --------------------------------------------------
-//                 date_field: "show_date",
+                // --------------------------------------------------
+                // Date field used for the built-in date filter.
+                // (Only if your DocType has a Date field)
+                // --------------------------------------------------
+                date_field: "show_date",
 
-//                 // --------------------------------------------------
-//                 // Used ONLY when using a custom Python query.
-//                 // These become the table columns in the dialog.
-//                 // --------------------------------------------------
-//                 columns: [
-//                     "movie_name",
-//                     "ticket_price",
-//                     "status"
-//                 ],
+                // --------------------------------------------------
+                // Used ONLY when using a custom Python query.
+                // These become the table columns in the dialog.
+                // --------------------------------------------------
+                columns: [
+                    "movie_name",
+                    "ticket_price",
+                    "status"
+                ],
 
-//                 // --------------------------------------------------
-//                 // Decide which records should appear.
-//                 // --------------------------------------------------
-//                 get_query() {
-//                     return {
+                // --------------------------------------------------
+                // Decide which records should appear.
+                // --------------------------------------------------
+                get_query() {
+                    return {
 
-//                         // Default filtering
-//                         filters: {
-//                             status: "Booked"
-//                         }
+                        // Default filtering
+                        filters: {
+                            status: "Booked"
+                        }
 
-//                         /*
-//                         OR use your own Python method
+                        /*
+                        OR use your own Python method
 
-//                         query: "practice_app.api.get_movie_tickets",
+                        query: "practice_app.api.get_movie_tickets",
 
-//                         filters: {
-//                             status: "Booked"
-//                         }
-//                         */
+                        filters: {
+                            status: "Booked"
+                        }
+                        */
 
-//                     };
-//                 },
+                    };
+                },
 
-//                 // --------------------------------------------------
-//                 // Allow selecting CHILD TABLE rows
-//                 // instead of parent documents.
-//                 // (Only if the parent DocType has a Table field)
-//                 // --------------------------------------------------
-//                 allow_child_item_selection: 0,
+                // --------------------------------------------------
+                // Allow selecting CHILD TABLE rows
+                // instead of parent documents.
+                // (Only if the parent DocType has a Table field)
+                // --------------------------------------------------
+                allow_child_item_selection: 0,
 
-//                 // --------------------------------------------------
-//                 // Name of the Table field inside the parent DocType.
-//                 // Example:
-//                 // Sales Order --> items
-//                 // Purchase Order --> items
-//                 // --------------------------------------------------
-//                 child_fieldname: "items",
+                // --------------------------------------------------
+                // Name of the Table field inside the parent DocType.
+                // Example:
+                // Sales Order --> items
+                // Purchase Order --> items
+                // --------------------------------------------------
+                child_fieldname: "items",
 
-//                 // --------------------------------------------------
-//                 // Child table columns shown in the dialog.
-//                 // --------------------------------------------------
-//                 child_columns: [
-//                     "item_code",
-//                     "qty",
-//                     "rate"
-//                 ],
+                // --------------------------------------------------
+                // Child table columns shown in the dialog.
+                // --------------------------------------------------
+                child_columns: [
+                    "item_code",
+                    "qty",
+                    "rate"
+                ],
 
-//                 // --------------------------------------------------
-//                 // Runs after clicking the primary button.
-//                 // --------------------------------------------------
-//                 action(selections, args) {
+                // --------------------------------------------------
+                // Runs after clicking the primary button.
+                // --------------------------------------------------
+                action(selections, args) {
 
-//                     // Parent document names
-//                     console.log("Selected Parent Docs");
-//                     console.log(selections);
+                    // Parent document names
+                    console.log("Selected Parent Docs");
+                    console.log(selections);
 
-//                     // Child table row names
-//                     console.log("Selected Child Rows");
-//                     console.log(args.filtered_children);
+                    // Child table row names
+                    console.log("Selected Child Rows");
+                    console.log(args.filtered_children);
 
-//                     frappe.msgprint(
-//                         "Selected Documents:<br>" +
-//                         selections.join("<br>")
-//                     );
-//                 }
+                    frappe.msgprint(
+                        "Selected Documents:<br>" +
+                        selections.join("<br>")
+                    );
+                }
 
-//             });
+            });
 
-//         });
+        });
 
-//     }
-// });
+    }
+});
 
 // frappe.ui.form.on("Movie Ticket", {
 //     refresh(frm) {

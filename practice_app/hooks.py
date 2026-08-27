@@ -449,3 +449,10 @@ doc_events = {
         "validate": "practice_app.api.custom_logic"
     }
 }
+
+
+scheduler_events={
+    "daily":[
+        "practice_app.tasks.daily_maintenance"
+    ]
+}

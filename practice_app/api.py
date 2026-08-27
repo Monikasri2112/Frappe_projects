@@ -860,7 +860,7 @@ def get_order_items():
     query = frappe.qb.get_query(
         "purchase order",
         fields=[
-            "name",
+            "name as empname",
             "items.product",
             "items.quantity",
             "items.rate"
@@ -1272,3 +1272,45 @@ def test_job(number):
 
 def custom_logic(doc, method=None):
     frappe.msgprint("Hook executed!")
+
+
+
+
+import frappe
+@frappe.whitelist()
+def student_employee_api():
+    student=frappe.qb.DocType("student")
+    Employee=frappe.qb.DocType("Employee qb")
+
+    results=(
+        frappe.qb.from_(student)
+        .join(Employee)
+        .on(student.student_name==Employee.employee_name)
+        .select(
+            student.name,
+            student.student_name,
+            student.city,
+            student.country,
+            Employee.employee_name,
+            Employee.first_name,
+            Employee.last_name
+        )
+        .limit(2)
+    ).run(as_dict=True)
+
+    if results:
+        doc=frappe.get_doc("student",results[0]["name"])
+        doc.country="Updated"
+        doc.save()
+
+        for row in results:
+            frappe.db.set_value(
+                "student",
+                row["name"],
+                "city",
+                "chennai"
+            )
+    return results
+
+
+    
