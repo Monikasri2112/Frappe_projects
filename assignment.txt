@@ -1,2 +1,9 @@
 https://github.com/Monikasri2112/Frappe_projects/blob/branchname/practice_app/tasks.py
 https://github.com/Monikasri2112/Frappe_projects/blob/branchname/practice_app/hooks.py
+
+
+scheduler_events={
+    "daily":[
+        "practice_app.tasks.daily_maintenance"
+    ]
+}
