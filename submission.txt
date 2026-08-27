@@ -1,2 +1,38 @@
 https://github.com/Monikasri2112/Frappe_projects/blob/branchname/practice_app/practice_app/doctype/test_document/test_document.py
 https://github.com/Monikasri2112/Frappe_projects/blob/branchname/practice_app/hooks.py
+
+import frappe
+@frappe.whitelist()
+def student_employee_api():
+    student=frappe.qb.DocType("student")
+    Employee=frappe.qb.DocType("Employee qb")
+
+    results=(
+        frappe.qb.from_(student)
+        .join(Employee)
+        .on(student.student_name==Employee.employee_name)
+        .select(
+            student.name,
+            student.student_name,
+            student.city,
+            student.country,
+            Employee.employee_name,
+            Employee.first_name,
+            Employee.last_name
+        )
+        .limit(2)
+    ).run(as_dict=True)
+
+    if results:
+        doc=frappe.get_doc("student",results[0]["name"])
+        doc.country="Updated"
+        doc.save()
+
+        for row in results:
+            frappe.db.set_value(
+                "student",
+                row["name"],
+                "city",
+                "chennai"
+            )
+    return results
