@@ -1,0 +1,52 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <h2>Salary Report</h2>
+
+            <p>
+                <strong>Department:</strong>
+                {%= filters.department || "" %}
+            </p>
+
+            <table class="table table-bordered table-striped">
+
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for(var i = 0, l = data.length; i < l; i++) { %}
+
+                        <tr>
+                            <td>
+                                {%= data[i].employee_name || "" %}
+                            </td>
+
+                            <td>
+                                {%= data[i].department || "" %}
+                            </td>
+
+                            <td>
+                                {%= data[i].salary || "" %}
+                            </td>
+                        </tr>
+
+                    {% } %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

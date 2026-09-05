@@ -1,0 +1,55 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2 class="text-center">Salary Report</h2>
+
+            <p>
+                <strong>Department:</strong>
+                <%= filters.department || "" %>
+            </p>
+
+            <table class="table table-bordered table-striped">
+
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Department</th>
+                        <th>Average Salary</th>
+                        <th>Total Bonus</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <% data.forEach(function(row) { %>
+
+                        <tr>
+                            <td>
+                                <%= row.employee_name || "" %>
+                            </td>
+
+                            <td>
+                                <%= row.department || "" %>
+                            </td>
+
+                            <td>
+                                <%= row.average_salary || "" %>
+                            </td>
+
+                            <td>
+                                <%= row.total_bonus || "" %>
+                            </td>
+                        </tr>
+
+                    <% }); %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>
