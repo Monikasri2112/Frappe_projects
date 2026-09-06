@@ -1,0 +1,24 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Leave Request",
+  "enabled": 1,
+  "modified": "2026-09-03 12:07:44.939744",
+  "module": "Test App",
+  "name": "leave request",
+  "script": "frappe.ui.form.on('Leave Request', {\r\n    from_date: function(frm) {\r\n        calculate_days(frm);\r\n    },\r\n\r\n    to_date: function(frm) {\r\n        calculate_days(frm);\r\n    }\r\n});\r\n\r\nfunction calculate_days(frm) {\r\n    if (frm.doc.from_date && frm.doc.to_date) {\r\n\r\n        let from_date = frappe.datetime.str_to_obj(frm.doc.from_date);\r\n        let to_date = frappe.datetime.str_to_obj(frm.doc.to_date);\r\n\r\n        let difference = to_date - from_date;\r\n\r\n        let days = difference / (1000 * 60 * 60 * 24);\r\n\r\n        frm.set_value('total_days', days + 1);\r\n    }\r\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "User",
+  "enabled": 1,
+  "modified": "2026-09-06 22:11:49.081044",
+  "module": null,
+  "name": "user script",
+  "script": "frappe.ui.form.on('User', {\n\trefresh(frm) {\n\t    frm.add_custom_button('Send Welcome Email', function() {\n            frappe.msgprint('Email Sent!');\n        }, 'Actions');\n\t}\n})",
+  "view": "Form"
+ }
+]
