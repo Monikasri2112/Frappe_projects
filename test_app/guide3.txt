@@ -1,4 +1,4 @@
 article.html:https://github.com/Monikasri2112/Frappe_projects/blob/branchname/test_app/test_app/www/articles.html
 article.py:https://github.com/Monikasri2112/Frappe_projects/blob/branchname/test_app/test_app/www/articles.py
 test_article.py:https://github.com/Monikasri2112/Frappe_projects/blob/branchname/test_app/test_app/test_app/doctype/article/test_article.py
-
+Output:https://github.com/Monikasri2112/Frappe_projects/blob/branchname/test_app/Screenshot%202026-09-07%20171918.png
